@@ -7,7 +7,6 @@ import {DeployFundMe} from "../../script/DeployFundMe.s.sol";
 import {FundFundMe, WithdrawFundMe} from "../../script/Interactions.s.sol";
 
 contract FundMeIntegrationTest is Test {
-
     FundMe fundMe;
 
     uint256 constant SEND_VALUE = 0.1 ether;
