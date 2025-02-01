@@ -1,66 +1,102 @@
-## Foundry
+# 💰 FundMe
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+![License](https://img.shields.io/badge/license-MIT-green)
+![Solidity](https://img.shields.io/badge/Solidity-%5E0.8.0-blue)
+![Foundry](https://img.shields.io/badge/Built%20With-Foundry-orange)
 
-Foundry consists of:
+## 📌 Overview
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+**FundMe** is a decentralized crowdfunding platform built on Ethereum using Solidity and the Foundry framework. This project enables users to create fundraising campaigns and allows others to contribute ETH to support these initiatives.
 
-## Documentation
+This repository contains the smart contracts, deployment scripts, and testing suite for the FundMe platform.
 
-https://book.getfoundry.sh/
+---
 
-## Usage
+## ⚙️ Features
 
-### Build
+✔️ **Campaign Creation** – Users can initiate fundraising campaigns with specific goals and deadlines.  
+✔️ **Secure Contributions** – Supporters can contribute ETH directly to campaigns.  
+✔️ **Goal Tracking** – Campaigns track contributions towards their funding goals.  
+✔️ **Automated Refunds** – If a campaign doesn't meet its goal by the deadline, contributors can claim refunds.  
+✔️ **Transparent and Decentralized** – All transactions are handled via smart contracts, ensuring trustlessness.
 
-```shell
-$ forge build
+---
+
+## 🏗 Smart Contract Architecture
+
+The system consists of the following core contracts:
+
+### 🔹 [`FundMe.sol`](src/FundMe.sol)
+
+- Manages campaign creation, contributions, and fund withdrawals.
+- Tracks campaign goals, deadlines, and contributions.
+- Implements logic for refunds if funding goals are not met.
+
+---
+
+## 🚀 Installation & Setup
+
+Ensure you have **Foundry** installed. If not, install it using:
+
+```sh
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
 ```
 
-### Test
+### 1️⃣ Clone the repository:
 
-```shell
-$ forge test
+```sh
+git clone https://github.com/0xByteKnight/Foundry-FundMe.git
+cd Foundry-FundMe
 ```
 
-### Format
+### 2️⃣ Install dependencies:
 
-```shell
-$ forge fmt
+```sh
+forge install
 ```
 
-### Gas Snapshots
+### 3️⃣ Compile contracts:
 
-```shell
-$ forge snapshot
+```sh
+forge build
 ```
 
-### Anvil
+### 4️⃣ Run tests:
 
-```shell
-$ anvil
+```sh
+forge test
 ```
+---
 
-### Deploy
+## 🏗 Development & Contribution
 
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
+💡 Found a bug? Have an idea to improve the platform? Contributions are welcome!
 
-### Cast
+### ✅ Steps to Contribute:
 
-```shell
-$ cast <subcommand>
-```
+1. **Fork** this repository.
+2. **Create** a new branch: `git checkout -b feature-xyz`.
+3. **Commit** your changes: `git commit -m "Add feature xyz"`.
+4. **Push** to your fork and create a **Pull Request**.
 
-### Help
+---
 
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+## 🔐 Security Considerations
+
+- **Reentrancy Protection** – Ensure that withdrawals and refunds are protected against reentrancy attacks.
+- **Input Validation** – Validate user inputs to prevent erroneous or malicious data.
+- **Deadline Management** – Accurately handle campaign deadlines to ensure proper fund management.
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** – feel free to use and modify it.
+
+---
+
+## 🔗 Connect with Me
+
+💼 **GitHub**: [0xByteKnight](https://github.com/0xByteKnight)  
+🐦 **Twitter/X**: [@0xByteKnight](https://twitter.com/0xByteKnight)
